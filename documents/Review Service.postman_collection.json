@@ -1,0 +1,586 @@
+{
+	"info": {
+		"_postman_id": "479d87d8-0774-4d66-b521-48511394e69c",
+		"name": "Review Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Set Options",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 1,\n    \"visible\": true,\n    \"comments_mode\": \"public\",\n    \"vote_mode\": \"public\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/review/set-options",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"set-options"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Set Options",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"visible\": true,\n    \"comments_mode\": \"public\",\n    \"vote_mode\": \"public\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/review/set-options",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"set-options"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:33:37 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:33:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"msg\": \"Your request Successfully handled.\",\n        \"status\": \"Success\",\n        \"statusCode\": 0\n    },\n    \"data\": {\n        \"product_id\": 1,\n        \"product_visibility\": true,\n        \"comments_mode\": \"public\",\n        \"vote_mode\": \"public\",\n        \"updated_at\": \"2022-01-29T22:33:37.000000Z\",\n        \"created_at\": \"2022-01-29T22:33:37.000000Z\",\n        \"id\": 1\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Options",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/review/get-options/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"get-options",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Options",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/review/get-options/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"get-options",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:40 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"msg\": \"Your request Successfully handled.\",\n        \"status\": \"Success\",\n        \"statusCode\": 0\n    },\n    \"data\": {\n        \"product_id\": 1,\n        \"product_visibility\": 1,\n        \"comments_mode\": \"public\",\n        \"vote_mode\": \"public\",\n        \"vote_avg\": 3.4,\n        \"comments_count\": 5,\n        \"last_comments\": [\n            {\n                \"id\": 5,\n                \"product_id\": 1,\n                \"user_id\": null,\n                \"comment\": \"این محصول حرف نداشت\",\n                \"vote\": 2,\n                \"updated_at\": \"2022-01-29T22:35:36.000000Z\"\n            },\n            {\n                \"id\": 4,\n                \"product_id\": 1,\n                \"user_id\": null,\n                \"comment\": \"این محصول حرف نداشت\",\n                \"vote\": 3,\n                \"updated_at\": \"2022-01-29T22:35:34.000000Z\"\n            },\n            {\n                \"id\": 3,\n                \"product_id\": 1,\n                \"user_id\": null,\n                \"comment\": \"این محصول حرف نداشت\",\n                \"vote\": 4,\n                \"updated_at\": \"2022-01-29T22:35:30.000000Z\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Insert Review",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\": 1,\n    \"comment\": \"این محصول حرف نداشت\",\n    \"vote\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/review/review-insert",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"review-insert"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Insert Review",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\": 1,\n    \"comment\": \"این محصول حرف نداشت\",\n    \"vote\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/review/review-insert",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"review-insert"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:24 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "52"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"msg\": \"Your request Successfully handled.\",\n        \"status\": \"Success\",\n        \"statusCode\": 0\n    },\n    \"data\": {\n        \"status\": \"pending\",\n        \"product_id\": 1,\n        \"user_id\": null,\n        \"comment\": \"این محصول حرف نداشت\",\n        \"vote\": 2,\n        \"updated_at\": \"2022-01-29T22:35:23.000000Z\",\n        \"created_at\": \"2022-01-29T22:35:23.000000Z\",\n        \"id\": 5\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "List Of Pending Reviews",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/api/v1/review/review-pending-list",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"review-pending-list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "List Of Pending Reviews",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/v1/review/review-pending-list",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"review-pending-list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:26 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "51"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"msg\": \"Your request Successfully handled.\",\n        \"status\": \"Success\",\n        \"statusCode\": 0\n    },\n    \"data\": [\n        {\n            \"id\": 3,\n            \"product_id\": 1,\n            \"user_id\": null,\n            \"comment\": \"این محصول حرف نداشت\",\n            \"vote\": 4,\n            \"status\": \"pending\"\n        },\n        {\n            \"id\": 4,\n            \"product_id\": 1,\n            \"user_id\": null,\n            \"comment\": \"این محصول حرف نداشت\",\n            \"vote\": 3,\n            \"status\": \"pending\"\n        },\n        {\n            \"id\": 5,\n            \"product_id\": 1,\n            \"user_id\": null,\n            \"comment\": \"این محصول حرف نداشت\",\n            \"vote\": 2,\n            \"status\": \"pending\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Change Review Status",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"review_id\": 5,\n    \"status\": \"passed\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/v1/review/status-change",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"review",
+						"status-change"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Change Review Status",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"review_id\": 5,\n    \"status\": \"passed\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/v1/review/status-change",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"review",
+								"status-change"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:36 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 29 Jan 2022 22:35:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.27"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "48"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"meta\": {\n        \"msg\": \"Your request Successfully handled.\",\n        \"status\": \"Success\",\n        \"statusCode\": 0\n    },\n    \"data\": {\n        \"id\": 5,\n        \"product_id\": 1,\n        \"user_id\": null,\n        \"comment\": \"این محصول حرف نداشت\",\n        \"vote\": 2,\n        \"status\": \"passed\",\n        \"deleted_at\": null,\n        \"created_at\": \"2022-01-29T22:35:23.000000Z\",\n        \"updated_at\": \"2022-01-29T22:35:36.000000Z\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": ""
+		}
+	]
+}
