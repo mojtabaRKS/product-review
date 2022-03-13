@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Comment;
+use App\Models\Product;
+use App\Models\Vote;
 use Illuminate\Database\Seeder;
 
 class ProductAndCommentSeeder extends Seeder
@@ -14,6 +16,9 @@ class ProductAndCommentSeeder extends Seeder
      */
     public function run()
     {
-        Comment::factory()->count(10)->create();
+        Product::factory()->count(10)
+            ->has(Comment::factory()->count(10), 'comments')
+            ->has(Vote::factory()->count(10), 'votes')
+            ->create();
     }
 }
