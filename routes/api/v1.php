@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\VoteController;
+use App\Http\Controllers\Api\V1\CommentController;
 use App\Http\Controllers\Api\V1\ProductController;
 
 /*
@@ -16,6 +18,8 @@ use App\Http\Controllers\Api\V1\ProductController;
 
 Route::prefix('products')->as('products.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::get('/{id}', [ProductController::class, 'show'])->name('show');
+    Route::put('/{id}', [ProductController::class, 'update'])->name('update');
 });
 
 // Route::prefix('comments')->group(function () {

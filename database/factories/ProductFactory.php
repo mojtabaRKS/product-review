@@ -26,6 +26,8 @@ class ProductFactory extends Factory
             'description' => $this->faker->sentence(),
             'price' => $this->faker->numerify("#######"),
             'is_visible' => $this->faker->boolean(),
+            'comment_mode' => $this->faker->randomElement(Product::MODES),
+            'vote_mode' => $this->faker->randomElement(Product::MODES),
         ];
     }
 }
