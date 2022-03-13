@@ -22,18 +22,10 @@ Route::prefix('products')->as('products.')->group(function () {
     Route::put('/{id}', [ProductController::class, 'update'])->name('update');
 });
 
+Route::prefix('reviews')->as('review.')->group(function () {
 // Route::prefix('comments')->group(function () {
 //     Route::get('/', [CommentController::class, 'store']);
 
-//     //get options for one product
-//     Route::get('get-options/{product_id}', [OptionsController::class, 'getOptions']);
-//     //set options for one product
-//     Route::post('set-options', [OptionsController::class, 'setOptions']);
-//     //insert new review(comment or vote or both)
-    
-//     //get list of all pending review
-//     Route::get('review-pending-list', [CommentsController::class, 'getAllPendingComments']);
-//     //change one review status
-//     Route::post('status-change', [CommentsController::class, 'changeReviewStatus']);
-// });
-
+    Route::post('comments', [CommentController::class, 'store'])->name('store');
+    Route::put('comments/{id}/change-status', [CommentController::class, 'changeStatus'])->name('change-status');
+});

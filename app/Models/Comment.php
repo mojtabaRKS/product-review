@@ -9,8 +9,8 @@ class Comment extends Model
 {
     use HasFactory;
 
-    public const PENDING_STATUS = 'pending';
     public const APPROVED_STATUS = 'approved';
+    public const PENDING_STATUS = 'pending';
     public const REJECT_STATUS = 'reject';
 
     public const ALL_STATUSES = [
@@ -28,4 +28,12 @@ class Comment extends Model
         'description',
         'status',
     ];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }
