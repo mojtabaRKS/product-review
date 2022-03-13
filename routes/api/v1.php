@@ -23,8 +23,8 @@ Route::prefix('products')->as('products.')->group(function () {
 });
 
 Route::prefix('reviews')->as('review.')->group(function () {
-// Route::prefix('comments')->group(function () {
-//     Route::get('/', [CommentController::class, 'store']);
+    Route::post('votes', [VoteController::class, 'store'])->name('store');
+    Route::put('votes/{id}', [ReviewController::class, 'changeStatus'])->name('change-status');
 
     Route::post('comments', [CommentController::class, 'store'])->name('store');
     Route::put('comments/{id}/change-status', [CommentController::class, 'changeStatus'])->name('change-status');
