@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\Product;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateProductsTable extends Migration
 {
@@ -19,6 +20,8 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->bigInteger('price');
             $table->boolean('is_visible')->default(true);
+            $table->string('comment_mode')->default(Product::PUBLIC_MODE);
+            $table->string('vote_mode')->default(Product::PUBLIC_MODE);
             $table->timestamps();
         });
     }

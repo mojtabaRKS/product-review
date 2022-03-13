@@ -6,7 +6,7 @@ use App\Models\Comment;
 use App\Repositories\Api\V1\Contracts\Criteria;
 use App\Repositories\Api\V1\Contracts\RepositoryInterface;
 
-class WithLast3Comments extends Criteria
+class WithComments extends Criteria
 {
     /**
      * @param $model
@@ -16,9 +16,7 @@ class WithLast3Comments extends Criteria
     public function apply($model, RepositoryInterface $repository)
     {
         return $model->with(['comments' => function ($query) {
-            return $query->where('status', Comment::APPROVED_STATUS)
-                ->latest()
-                ->limit(3);
+            $query->latest();
         }]);
     }
 }

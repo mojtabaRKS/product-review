@@ -2,23 +2,24 @@
 
 namespace App\Repositories\Api\V1\Product\Criteria;
 
-use App\Models\Comment;
+use App\Models\Vote;
+use Illuminate\Database\Eloquent\Builder;
 use App\Repositories\Api\V1\Contracts\Criteria;
 use App\Repositories\Api\V1\Contracts\RepositoryInterface;
 
-class WithLast3Comments extends Criteria
+class WithVotesAverage extends Criteria
 {
     /**
-     * @param $model
+     * @param Builder $model
      * @param RepositoryInterface $repository
      * @return mixed
      */
     public function apply($model, RepositoryInterface $repository)
     {
-        return $model->with(['comments' => function ($query) {
-            return $query->where('status', Comment::APPROVED_STATUS)
-                ->latest()
-                ->limit(3);
-        }]);
+        return $model->withAvg([
+            'votes' => function ($query) {
+                return $query->where('status', Vote::APPROVED_STATUS);
+            },            
+        ], 'rate');
     }
 }

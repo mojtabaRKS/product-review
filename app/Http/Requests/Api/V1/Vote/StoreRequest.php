@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests\Api\v1;
+namespace App\Http\Requests\Api\V1\Vote;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class InsertReviewRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
         return true;
     }
@@ -21,12 +21,11 @@ class InsertReviewRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'product_id' => 'required|exists:options,product_id',
-            'comment' => 'required|nullable|string',
-            'vote' => 'required|integer|between:0,5',
+            'product_id' => 'required|integer|exists:products,id',
+            'rate' => 'required|integer|between:1,10',
         ];
     }
 }

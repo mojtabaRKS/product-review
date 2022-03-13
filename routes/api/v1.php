@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\V1\VoteController;
+use App\Http\Controllers\Api\V1\CommentController;
 use App\Http\Controllers\Api\V1\ProductController;
 
 /*
@@ -16,20 +18,14 @@ use App\Http\Controllers\Api\V1\ProductController;
 
 Route::prefix('products')->as('products.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
+    Route::get('/{id}', [ProductController::class, 'show'])->name('show');
+    Route::put('/{id}', [ProductController::class, 'update'])->name('update');
 });
 
-// Route::prefix('comments')->group(function () {
-//     Route::get('/', [CommentController::class, 'store']);
+Route::prefix('reviews')->as('review.')->group(function () {
+    Route::post('votes', [VoteController::class, 'store'])->name('store');
+    Route::put('votes/{id}', [ReviewController::class, 'changeStatus'])->name('change-status');
 
-//     //get options for one product
-//     Route::get('get-options/{product_id}', [OptionsController::class, 'getOptions']);
-//     //set options for one product
-//     Route::post('set-options', [OptionsController::class, 'setOptions']);
-//     //insert new review(comment or vote or both)
-    
-//     //get list of all pending review
-//     Route::get('review-pending-list', [CommentsController::class, 'getAllPendingComments']);
-//     //change one review status
-//     Route::post('status-change', [CommentsController::class, 'changeReviewStatus']);
-// });
-
+    Route::post('comments', [CommentController::class, 'store'])->name('store');
+    Route::put('comments/{id}/change-status', [CommentController::class, 'changeStatus'])->name('change-status');
+});

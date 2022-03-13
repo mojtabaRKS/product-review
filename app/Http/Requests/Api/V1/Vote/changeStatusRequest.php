@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Http\Requests\Api\v1;
+namespace App\Http\Requests\Api\V1\Vote;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ChangeReviewStatusRequest extends FormRequest
+class changeStatusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize(): bool
+    public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -21,11 +21,10 @@ class ChangeReviewStatusRequest extends FormRequest
      *
      * @return array
      */
-    public function rules(): array
+    public function rules()
     {
         return [
-            'review_id' => 'required|exists:comments,id',
-            'status' => 'required|in:passed,rejected,pending'
+            //
         ];
     }
 }

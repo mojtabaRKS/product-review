@@ -6,6 +6,7 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use App\Exceptions\RepositoryException;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Container\Container as App;
 use App\Repositories\Api\V1\Contracts\Criteria;
 use App\Exceptions\CriteriaDoesNotExistsException;
@@ -511,7 +512,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     }
 
     /**
-     * @return $this
+     * @return Builder
      *
      * @throws CriteriaDoesNotExistsException
      */

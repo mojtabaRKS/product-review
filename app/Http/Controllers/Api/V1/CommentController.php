@@ -2,68 +2,73 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use Exception;
-use App\Services\CommentService;
-use Illuminate\Http\JsonResponse;
+use Throwable;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Api\v1\InsertReviewRequest;
-use App\Http\Requests\Api\v1\ChangeReviewStatusRequest;
+use App\Services\Api\V1\CommentService;
+use App\Http\Requests\Api\V1\Comment\StoreRequest;
+use App\Http\Requests\Api\V1\Comment\changeStatusRequest;
 
 class CommentController extends Controller
 {
     /**
-     * @var CommentService
+     * @var CommentService $commentService
      */
-    private $commentService;
+    protected CommentService $commentService;
 
     /**
-     * CommentController constructor.
+     * ReviewController constructor.
+     * 
      * @param CommentService $commentService
      */
     public function __construct(CommentService $commentService)
     {
-        parent::__construct();
         $this->commentService = $commentService;
     }
 
     /**
-     * @param InsertReviewRequest $request
-     * @return JsonResponse
+     * @param StoreRequest $request
      */
-    public function store(InsertReviewRequest $request): JsonResponse
+    public function store(StoreRequest $request)
     {
+        DB::beginTransaction();
         try {
-            $response = $this->commentService->insertComment($request);
-            return $this->setMetaData($response->toArray())->successResponse();
-        } catch (Exception $e) {
-            return ($this->exceptionHandler->exceptionHandler($e));
+            $this->commentService->create($request->validated());
+            DB::commit();
+            return $this->successReponse(
+                trans('messages.action_successfully_done'),
+                Response::HTTP_CREATED
+            );
+        } catch (Throwable $exception) {
+            DB::rollBack();
+            return $this->failureResponse(
+                $exception->getMessage(),
+                $exception
+            );
         }
     }
 
     /**
-     * @return JsonResponse
+     * @param int $id
+     * @param changeStatusRequest $request
      */
-    public function getAllPendingComments(): JsonResponse
+    public function changeStatus($id, changeStatusRequest $request)
     {
+        DB::beginTransaction();
         try {
-            $response = $this->commentService->getAllPendingComments();
-            return $this->setMetaData($response->toArray())->successResponse();
-        } catch (Exception $e) {
-            return ($this->exceptionHandler->exceptionHandler($e));
-        }
-    }
-
-    /**
-     * @param ChangeReviewStatusRequest $request
-     * @return JsonResponse
-     */
-    public function changeReviewStatus(ChangeReviewStatusRequest $request): JsonResponse
-    {
-        try {
-            $response = $this->commentService->changeReviewStatus($request);
-            return $this->setMetaData($response->toArray())->successResponse();
-        } catch (Exception $e) {
-            return ($this->exceptionHandler->exceptionHandler($e));
+            $this->commentService->changeStatus($id, $request->validated());
+            DB::commit();
+            return $this->successReponse(
+                trans('messages.action_successfully_done'),
+                Response::HTTP_CREATED
+            );
+        } catch (Throwable $exception) {
+            DB::rollBack();
+            return $this->failureResponse(
+                $exception->getMessage(),
+                $exception
+            );
         }
     }
 }
