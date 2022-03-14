@@ -36,6 +36,7 @@ class ProductTest extends TestCase
                     'comments_count' => 1,
                     'comments' => [
                         [
+                            'id' => $product->comments->first()->id,
                             'user_id' => $product->comments->first()->user_id,
                             'description' => $product->comments->first()->description,
                             'status' => $product->comments->first()->status,
@@ -104,6 +105,7 @@ class ProductTest extends TestCase
                     'comments_count' => 1,
                     'comments' => [
                         [
+                            'id' => $product->comments->first()->id,
                             'user_id' => $product->comments->first()->user_id,
                             'description' => $product->comments->first()->description,
                             'status' => $product->comments->first()->status,
