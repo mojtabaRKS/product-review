@@ -32,7 +32,7 @@ class CommentService
      */
     public function create(array $data): void
     {
-        $this->handleCanReview($data['product_id'], 'vote');
+        $this->handleCanReview($data['product_id'], 'comment');
 
         $this->commentRepository->create(
             $this->prepareData($data)
