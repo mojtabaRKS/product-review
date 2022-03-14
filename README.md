@@ -34,4 +34,5 @@ REDIS_HOST=redis
 ```
 
 7. `$ php artisan key:generate`
-8. `$ php artisan migrate --seed`
+8. `$ sudo chmod -R 777 storage && sudo chown -R USER:www-data storage`
+9. `$ php artisan migrate --seed`
