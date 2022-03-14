@@ -22,7 +22,7 @@ class ProductResource extends JsonResource
             'comment_mode' => $this->comment_mode,
             'vote_mode' => $this->vote_mode,
             'votes_average' => intval($this->votes_average),
-            'comments_count' => $this->comments_count,
+            'comments_count' => $this->comments->count(),
             'comments' => CommentResource::collection($this->comments),
         ];
     }
