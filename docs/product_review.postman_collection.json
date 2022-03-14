@@ -1,0 +1,742 @@
+{
+	"info": {
+		"_postman_id": "72b170c6-74e1-4ad1-b98a-aefd7c06cc03",
+		"name": "product_review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "all products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 23:59:31 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 13 Mar 2022 23:59:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"aliquid\",\n            \"description\": \"Aut illo atque harum.\",\n            \"price\": \"3,120,289\",\n            \"comment_mode\": \"order\",\n            \"vote_mode\": \"none\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"enim\",\n            \"description\": \"Voluptatem et quia facilis harum.\",\n            \"price\": \"2,095,997\",\n            \"comment_mode\": \"none\",\n            \"vote_mode\": \"public\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"iure\",\n            \"description\": \"Consequatur rerum quis incidunt cupiditate et.\",\n            \"price\": \"8,741,314\",\n            \"comment_mode\": \"order\",\n            \"vote_mode\": \"none\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"facere\",\n            \"description\": \"Accusamus sunt sint libero occaecati vel.\",\n            \"price\": \"8,011,874\",\n            \"comment_mode\": \"public\",\n            \"vote_mode\": \"order\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 5,\n            \"name\": \"maxime\",\n            \"description\": \"Nihil qui et in.\",\n            \"price\": \"5,028,467\",\n            \"comment_mode\": \"order\",\n            \"vote_mode\": \"public\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 6,\n            \"name\": \"velit\",\n            \"description\": \"Autem rem dicta ut ut tempore voluptatibus.\",\n            \"price\": \"1,868,700\",\n            \"comment_mode\": \"public\",\n            \"vote_mode\": \"none\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 7,\n            \"name\": \"odio\",\n            \"description\": \"Sint nesciunt ipsa nihil enim neque ut.\",\n            \"price\": \"6,854,162\",\n            \"comment_mode\": \"none\",\n            \"vote_mode\": \"order\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 8,\n            \"name\": \"itaque\",\n            \"description\": \"Dolor facilis exercitationem dolorum voluptatem.\",\n            \"price\": \"1,509,015\",\n            \"comment_mode\": \"order\",\n            \"vote_mode\": \"order\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 9,\n            \"name\": \"et\",\n            \"description\": \"Eum ut quisquam in omnis.\",\n            \"price\": \"7,730,967\",\n            \"comment_mode\": \"order\",\n            \"vote_mode\": \"public\",\n            \"votes_average\": 0,\n            \"comments_count\": 0,\n            \"comments\": []\n        },\n        {\n            \"id\": 10,\n            \"name\": \"placeat\",\n            \"description\": \"Incidunt voluptates quisquam vel corrupti explicabo.\",\n            \"price\": \"1,510,310\",\n            \"comment_mode\": \"public\",\n            \"vote_mode\": \"order\",\n            \"votes_average\": 0,\n            \"comments_count\": 3,\n            \"comments\": [\n                {\n                    \"description\": \"Soluta fuga sequi non impedit quia.\",\n                    \"user_id\": 4389521,\n                    \"status\": \"approved\"\n                },\n                {\n                    \"description\": \"Dolor quo vel ut recusandae aut autem.\",\n                    \"user_id\": 3,\n                    \"status\": \"approved\"\n                },\n                {\n                    \"description\": \"Dolorem magnam omnis suscipit sunt.\",\n                    \"user_id\": 3,\n                    \"status\": \"approved\"\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "show product",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update product",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:00:41 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:00:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"aliquid\",\n        \"description\": \"Aut illo atque harum.\",\n        \"price\": \"3,120,289\",\n        \"comment_mode\": \"order\",\n        \"vote_mode\": \"none\",\n        \"votes_average\": 0,\n        \"comments_count\": 10,\n        \"comments\": [\n            {\n                \"description\": \"Deleniti mollitia temporibus quia quae deleniti quo doloribus.\",\n                \"user_id\": 588106464,\n                \"status\": \"pending\"\n            },\n            {\n                \"description\": \"Delectus et ut dolores.\",\n                \"user_id\": 268,\n                \"status\": \"pending\"\n            },\n            {\n                \"description\": \"Explicabo natus et sint.\",\n                \"user_id\": 705,\n                \"status\": \"approved\"\n            },\n            {\n                \"description\": \"Qui sapiente cumque itaque et quidem.\",\n                \"user_id\": 244587,\n                \"status\": \"approved\"\n            },\n            {\n                \"description\": \"Sit et maiores rerum ducimus eaque iste ea omnis.\",\n                \"user_id\": 81,\n                \"status\": \"reject\"\n            },\n            {\n                \"description\": \"Amet doloremque aut blanditiis repudiandae reprehenderit autem nesciunt et.\",\n                \"user_id\": 286982323,\n                \"status\": \"reject\"\n            },\n            {\n                \"description\": \"Inventore consequatur dolorum fugit.\",\n                \"user_id\": 92,\n                \"status\": \"reject\"\n            },\n            {\n                \"description\": \"Autem quia odit tempore aperiam et non placeat.\",\n                \"user_id\": 53380761,\n                \"status\": \"reject\"\n            },\n            {\n                \"description\": \"Dicta qui in hic qui.\",\n                \"user_id\": 12361266,\n                \"status\": \"reject\"\n            },\n            {\n                \"description\": \"Voluptate odio recusandae qui quasi ad animi in.\",\n                \"user_id\": 33,\n                \"status\": \"pending\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "update product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" : \"BMW Z4\",\n    \"description\" : \"blah blah blah\",\n    \"price\" : 321654987,\n    \"comment_mode\" : \"public\",\n    \"vote_mode\" : \"order\",\n    \"is_visible\" : true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update product",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"BMW Z4\",\n    \"description\" : \"blah blah blah\",\n    \"price\" : 321654987,\n    \"comment_mode\" : \"public\",\n    \"vote_mode\" : \"order\",\n    \"is_visible\" : true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/products/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:04:11 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:04:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 200,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "save comment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\" : 1,\n    \"description\": \"asjhgakjdsgjdsfksfasd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/reviews/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"comments"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save comment",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\" : 1,\n    \"description\": \"asjhgakjdsgjdsfksfasd\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/reviews/comments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"comments"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:06:26 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:06:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "save vote",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"product_id\" : 1,\n    \"rate\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/reviews/votes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"votes"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "save vote",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"product_id\" : 1,\n    \"rate\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/reviews/votes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"votes"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:07:18 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:07:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "vote change status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\" : \"approved\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/reviews/votes/1/change-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"votes",
+						"1",
+						"change-status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "vote change status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"approved\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/reviews/votes/1/change-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"votes",
+								"1",
+								"change-status"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:08:04 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:08:04 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "comment change status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\" : \"reject\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/v1/reviews/comments/1/change-status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"reviews",
+						"comments",
+						"1",
+						"change-status"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "comment change status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\" : \"reject\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/reviews/comments/1/change-status",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"comments",
+								"1",
+								"change-status"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "localhost:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:08:42 GMT"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 14 Mar 2022 00:08:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.4.3"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"code\": 201,\n    \"message\": \"عملیات با موفقیت انجام شد\",\n    \"data\": []\n}"
+				}
+			]
+		}
+	]
+}

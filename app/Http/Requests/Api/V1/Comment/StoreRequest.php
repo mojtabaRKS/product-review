@@ -13,7 +13,7 @@ class StoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +25,6 @@ class StoreRequest extends FormRequest
     {
         return [
             'product_id' => 'required|exists:products,id',
-            'user_id' => 'required|integer',
             'description' => 'required|string|max:255',
         ];
     }

@@ -22,10 +22,11 @@ class Controller extends BaseController
      *
      * @return JsonResponse
      */
-    public function successResponse(string $message, $data = []): JsonResponse
+    public function successResponse(string $message, $data = [], $code = Response::HTTP_OK): JsonResponse
     {
         return ApiResponse::successResponse()
             ->setMessage($message)
+            ->setCode($code)
             ->setResponseValue($data)
             ->render();
     }

@@ -228,9 +228,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
     public function update(Model &$model, array $payload, bool $setUpdateFlag = true): Model
     {
         $model->fill($payload);
-        if ($setUpdateFlag) {
-            $this->setUserAction($model, 'updated_by');
-        }
+        
         $model->save();
 
         return $model;
@@ -238,40 +236,7 @@ abstract class Repository implements RepositoryInterface, CriteriaInterface
 
     public function delete(Model &$model, bool $setDeleteFlag = true): void
     {
-        if ($setDeleteFlag) {
-            $this->setDeletedFlag($model);
-        }
         $model->delete();
-    }
-
-    /**
-     * @param Model $model
-     *
-     * @throws Throwable
-     */
-    public function setDeletedFlag(Model &$model): void
-    {
-        $this->setUserAction($model, 'deleted_by');
-        $model->saveOrFail();
-    }
-
-    /**
-     * @param Model $model
-     * @param string $attribute
-     *
-     * @throws BindingResolutionException
-     */
-    public function setUserAction(Model &$model, string $attribute = 'created_by'): void
-    {
-        $model->$attribute = $this->getAuthor();
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAuthor(): ?string
-    {
-        return request()->get('auth_username');
     }
 
     /**

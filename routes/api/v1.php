@@ -18,14 +18,14 @@ use App\Http\Controllers\Api\V1\ProductController;
 
 Route::prefix('products')->as('products.')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('index');
-    Route::get('/{id}', [ProductController::class, 'show'])->name('show');
-    Route::put('/{id}', [ProductController::class, 'update'])->name('update');
+    Route::get('{id}', [ProductController::class, 'show'])->name('show');
+    Route::put('{id}', [ProductController::class, 'update'])->name('update');
 });
 
-Route::prefix('reviews')->as('review.')->group(function () {
-    Route::post('votes', [VoteController::class, 'store'])->name('store');
-    Route::put('votes/{id}', [ReviewController::class, 'changeStatus'])->name('change-status');
+Route::prefix('reviews')->as('reviews.')->group(function () {
+    Route::post('votes', [VoteController::class, 'store'])->name('votes.store');
+    Route::put('votes/{id}/change-status', [VoteController::class, 'changeStatus'])->name('votes.change-status');
 
-    Route::post('comments', [CommentController::class, 'store'])->name('store');
-    Route::put('comments/{id}/change-status', [CommentController::class, 'changeStatus'])->name('change-status');
+    Route::post('comments', [CommentController::class, 'store'])->name('comments.store');
+    Route::put('comments/{id}/change-status', [CommentController::class, 'changeStatus'])->name('comments.change-status');
 });

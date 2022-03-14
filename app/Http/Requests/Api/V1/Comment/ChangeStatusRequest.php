@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Api\V1\Comment;
 
+use App\Models\Vote;
 use Illuminate\Foundation\Http\FormRequest;
 
-class changeStatusRequest extends FormRequest
+class ChangeStatusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +14,7 @@ class changeStatusRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +25,7 @@ class changeStatusRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'status' => 'required|string|in:'. implode(',', Vote::ALL_STATUSES)
         ];
     }
 }

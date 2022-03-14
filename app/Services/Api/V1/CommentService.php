@@ -3,13 +3,16 @@
 namespace App\Services\Api\V1;
 
 use App\Models\Comment;
-use App\Repositories\Api\V1\CommentRepository;
-use App\Repositories\Api\V1\CommentRepositoryInterface;
+use App\Traits\HandleReview;
 use App\Repositories\Api\V1\Generics\WhereAttribute;
+use App\Repositories\Api\V1\Comment\CommentRepository;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
+use App\Repositories\Api\V1\Comment\CommentRepositoryInterface;
 
 class CommentService
 {
+    use HandleReview;
+    
     /**
      * @var CommentRepository $commentRepository
      */
@@ -29,6 +32,8 @@ class CommentService
      */
     public function create(array $data): void
     {
+        $this->handleCanReview($data['product_id'], 'comment');
+
         $this->commentRepository->create(
             $this->prepareData($data)
         );

@@ -3,6 +3,7 @@
 namespace App\Repositories\Api\V1\Generics;
 
 use App\Repositories\Api\V1\Contracts\Criteria;
+use App\Repositories\Api\V1\Contracts\Repository;
 
 class WhereAttribute extends Criteria
 {

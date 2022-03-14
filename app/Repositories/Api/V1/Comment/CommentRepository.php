@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\Api\V1;
+namespace App\Repositories\Api\V1\Comment;
 
 use App\Models\Comment;
 use App\Repositories\Api\V1\Contracts\Repository;
