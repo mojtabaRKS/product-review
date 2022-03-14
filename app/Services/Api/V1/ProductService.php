@@ -34,7 +34,6 @@ class ProductService
     public function get(): Collection
     {
         return $this->productRepository->getByCriteria([
-            WithCommentsCount::class,
             WithVotesAverage::class,
             WhereIsVisible::class,
             WithLast3Comments::class,
@@ -50,7 +49,6 @@ class ProductService
     {
         return $this->productRepository->getByCriteria([
             WithComments::class,
-            WithCommentsCount::class,
             WithVotesAverage::class,
             new WhereAttribute('id', $id),
         ])->firstOrFail();
@@ -69,5 +67,18 @@ class ProductService
         ])->firstOrFail();
 
         $this->productRepository->update($product, $data);
+    }
+    
+    /**
+     * @param string $attribute
+     * @param string $value
+     * 
+     * @return Product|null
+     */
+    public function findByAttribute($attribute, $value): ?Product
+    {
+        return $this->productRepository->getByCriteria([
+            new WhereAttribute($attribute, $value)
+        ])->first();
     }
 }
