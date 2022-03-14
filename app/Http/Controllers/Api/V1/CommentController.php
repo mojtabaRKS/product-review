@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Services\Api\V1\CommentService;
 use App\Http\Requests\Api\V1\Comment\StoreRequest;
-use App\Http\Requests\Api\V1\Comment\changeStatusRequest;
+use App\Http\Requests\Api\V1\Comment\ChangeStatusRequest;
 
 class CommentController extends Controller
 {
@@ -36,8 +36,9 @@ class CommentController extends Controller
         try {
             $this->commentService->create($request->validated());
             DB::commit();
-            return $this->successReponse(
+            return $this->successResponse(
                 trans('messages.action_successfully_done'),
+                [],
                 Response::HTTP_CREATED
             );
         } catch (Throwable $exception) {
@@ -51,16 +52,17 @@ class CommentController extends Controller
 
     /**
      * @param int $id
-     * @param changeStatusRequest $request
+     * @param ChangeStatusRequest $request
      */
-    public function changeStatus($id, changeStatusRequest $request)
+    public function changeStatus($id, ChangeStatusRequest $request)
     {
         DB::beginTransaction();
         try {
             $this->commentService->changeStatus($id, $request->validated());
             DB::commit();
-            return $this->successReponse(
+            return $this->successResponse(
                 trans('messages.action_successfully_done'),
+                [],
                 Response::HTTP_CREATED
             );
         } catch (Throwable $exception) {
