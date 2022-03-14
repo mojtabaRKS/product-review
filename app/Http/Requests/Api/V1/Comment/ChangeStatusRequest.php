@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Api\V1\Comment;
 
+use App\Models\Vote;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class ChangeStatusRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +25,7 @@ class StoreRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => 'required|exists:products,id',
-            'description' => 'required|string|max:255',
+            'status' => 'required|string|in:'. implode(',', Vote::ALL_STATUSES)
         ];
     }
 }
