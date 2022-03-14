@@ -63,9 +63,7 @@ class VoteController extends Controller
             $this->voteService->changeStatus($id, $request->validated());
             DB::commit();
             return $this->successResponse(
-                trans('messages.action_successfully_done'),
-                [],
-                Response::HTTP_CREATED
+                trans('messages.action_successfully_done')
             );
         } catch (Throwable $exception) {
             DB::rollBack();
